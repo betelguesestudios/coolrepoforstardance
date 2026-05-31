@@ -83,6 +83,18 @@
             document.body.style.transform = "rotate(180deg)";
         } else if (lower === "vandalize") {
             document.body.contentEditable = 'true'; document.designMode='on'; void 0;
+        } else if (lower === "trail") {
+            window.addEventListener('mousemove', (e) => {
+            let star = document.createElement("div");
+            star.textContent = "⛳";
+            star.style.position = "fixed";
+            star.style.left = e.clientX + "px";
+            star.style.top = e.clientY + "px";
+            star.style.pointerEvents = "none";
+            star.style.fontSize = "20px";
+            document.body.appendChild(star);
+            setTimeout(() => star.remove(), 400);
+            });
         } else {
             const idx = inputs.indexOf(lower);
             const reply = idx !== -1 ? outputs[idx] : "wdym";
