@@ -16,7 +16,8 @@
         function sendMessage() {
             const text = input.value.trim();
             if (!text) return;
-            console.log('Send:', text);
+            let position = tools.indexOf(text);
+            let output = outputs[position];
             input.value = '';
             input.focus();
         }
