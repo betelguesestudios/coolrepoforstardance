@@ -1,3 +1,24 @@
 <h1>
     AI that doesn't use water
 </h1>
+<p>talk to it:</p>
+<div class="chat-input">
+        <input id="messageInput" type="text" placeholder="Type a message..." />
+        <button id="sendBtn">Send</button>
+    </div>
+
+    <script>
+        const input = document.getElementById('messageInput');
+        const btn = document.getElementById('sendBtn');
+
+        function sendMessage() {
+            const text = input.value.trim();
+            if (!text) return;
+            console.log('Send:', text);
+            input.value = '';
+            input.focus();
+        }
+
+        btn.addEventListener('click', sendMessage);
+        input.addEventListener('keydown', (e) => { if (e.key === 'Enter') sendMessage(); });
+    </script>
