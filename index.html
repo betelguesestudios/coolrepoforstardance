@@ -1,19 +1,35 @@
+<style>
+    h1{
+        text-align: center;
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    p{
+        text-align: center;
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    .yes{
+     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+     text-align: center;
+    }
+</style>
 <h1>
     ai that doesn't use water
 </h1>
 <p>talk to it:</p>
+<div class="yes">
 <div id="output" aria-live="polite"></div>
 <div class="chat-input">
     <input id="messageInput" type="text" placeholder="say something lol" />
     <button id="sendBtn">Send</button>
+</div>
 </div>
 <script>
     const input = document.getElementById('messageInput');
     const btn = document.getElementById('sendBtn');
     const output = document.getElementById('output');
 
-    const inputs = ["hi", "ok","bruh","you suck","no","yes","wsg","wsp","who are you","why","whats 1+1","whats 2+2","whats 4+4","whats 8+8","whats 16+16","poopy","why so serious","why are you so smart","why are you so dumb","hello","who is the best","why","lmao","s","what is 1+2","tung tung tung sahur","triple t","tally hall","joe hawley","im a chud","what","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","and","&","aw","poop","poopyt","darn","yay what a cool guy","poo","tung tung","sahur","tung sahur","are you ai","are u ai"];
-    const outputs = ["no", "yay what a cool guy","what did i do","aw","yes","darn","a lot","the sky","a person","35","2","4","8","16", "idk bro ask chatgpt","no","ok","because i am", "august 12 2036 the heat death of the universe","august 12 2036 the heat death of the universe","me","august 12 2036 the heat death of the universe","big ai","ok brochacho i know its you","3 ig","triple t referenced","ok","he knows ball gng","joe hawley joe hawley joe hawley joe hawley joe hawley","no ur not","idk man","aaaaa","b? wdym gng","c??????? what brotato chip","ok mate","i can play rush e btw","pls stop","gd referenced","that is the first letter of my real name","please stop","joe hawley","potassium","yeah l urself","me?","no","ok","larry","august 12 2036 the heat death of the universe","r?!","pls bro stop","no","no u","v","w's in the chat","august 12 2036 the heat death of the universe","y? idk..","yay","tally hall referenced","tally hall referenced","ok fine","no u","le typo?","ok","yes","cheeseman","august 12 2036 the heat death of the universe","why so brainrot","ok bromine","no i am hand crafted. as an ai language model i can not perform these actions. (/j)","prolly not"];
+    const inputs = ["hi", "ok","bruh","you suck","no","yes","wsg","wsp","who are you","why","whats 1+1","whats 2+2","whats 4+4","whats 8+8","whats 16+16","poopy","why so serious","why are you so smart","why are you so dumb","hello","who is the best","why","lmao","s","what is 1+2","tung tung tung sahur","triple t","tally hall","joe hawley","im a chud","what","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","and","&","aw","poop","poopyt","darn","yay what a cool guy","poo","tung tung","sahur","tung sahur","are you ai","are u ai","yay"];
+    const outputs = ["no", "yay what a cool guy","what did i do","aw","yes","darn","a lot","the sky","a person","35","2","4","8","16", "idk bro ask chatgpt","no","ok","because i am", "august 12 2036 the heat death of the universe","august 12 2036 the heat death of the universe","me","august 12 2036 the heat death of the universe","big ai","ok brochacho i know its you","3 ig","triple t referenced","ok","he knows ball gng","joe hawley joe hawley joe hawley joe hawley joe hawley","no ur not","idk man","aaaaa","b? wdym gng","c??????? what brotato chip","ok mate","i can play rush e btw","pls stop","gd referenced","that is the first letter of my real name","please stop","joe hawley","potassium","yeah l urself","me?","no","ok","larry","august 12 2036 the heat death of the universe","r?!","pls bro stop","no","no u","v","w's in the chat","august 12 2036 the heat death of the universe","y? idk..","yay","tally hall referenced","tally hall referenced","ok fine","no u","le typo?","ok","yes","cheeseman","august 12 2036 the heat death of the universe","why so brainrot","ok bromine","no i am hand crafted. as an ai language model i can not perform these actions. (/j)","prolly not","very excite"];
 
     function appendMessage(who, text) {
         const el = document.createElement('div');
