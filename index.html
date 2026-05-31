@@ -1,27 +1,36 @@
 <h1>
-    AI that doesn't use water
+    ai that doesn't use water
 </h1>
 <p>talk to it:</p>
+<div id="output" aria-live="polite"></div>
 <div class="chat-input">
-        <input id="messageInput" type="text" placeholder="Type a message..." />
-        <button id="sendBtn">Send</button>
-    </div>
+    <input id="messageInput" type="text" placeholder="say something lol" />
+    <button id="sendBtn">Send</button>
+</div>
+<script>
+    const input = document.getElementById('messageInput');
+    const btn = document.getElementById('sendBtn');
+    const output = document.getElementById('output');
 
-    <script>
-        const input = document.getElementById('messageInput');
-        const btn = document.getElementById('sendBtn');
-        let inputs = ["hi","ok"]
-        let outputs = ["no", "yay what a cool guy"]
+    const inputs = ["hi", "ok"];
+    const outputs = ["no", "yay what a cool guy"];
 
-        function sendMessage() {
-            const text = input.value.trim();
-            if (!text) return;
-            let position = tools.indexOf(text);
-            let output = outputs[position];
-            input.value = '';
-            input.focus();
-        }
-
-        btn.addEventListener('click', sendMessage);
-        input.addEventListener('keydown', (e) => { if (e.key === 'Enter') sendMessage(); });
-    </script>
+    function appendMessage(who, text) {
+        const el = document.createElement('div');
+        el.textContent = who + ': ' + text;
+        output.appendChild(el);
+        output.scrollTop = output.scrollHeight;
+    }
+    function sendMessage() {
+        const text = input.value.trim();
+        if (!text) return;
+        const idx = inputs.indexOf(text.toLowerCase());
+        const reply = idx !== -1 ? outputs[idx] : "wdym";
+        appendMessage('you', text);
+        appendMessage('bot', reply);
+        input.value = '';
+        input.focus();
+    }
+    btn.addEventListener('click', sendMessage);
+    input.addEventListener('keydown', (e) => { if (e.key === 'Enter') sendMessage(); });
+</script>
