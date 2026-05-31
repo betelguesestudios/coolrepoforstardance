@@ -59,13 +59,29 @@
         output.appendChild(el);
         output.scrollTop = output.scrollHeight;
     }
+    function appendsecretMessage(text) {
+        const el = document.createElement('div');
+        el.textContent = text;
+        output.appendChild(el);
+        output.scrollTop = output.scrollHeight;
+    }    
     function sendMessage() {
         const text = input.value.trim();
         if (!text) return;
-        const idx = inputs.indexOf(text.toLowerCase());
-        const reply = idx !== -1 ? outputs[idx] : "wdym";
-        appendMessage('you', text);
-        appendMessage('bot', reply);
+
+        const lower = text.toLowerCase();
+
+        if (lower === "alert") {
+            alert("wow i bet you didnt know i could do this");
+        } else if (lower === "secret") {
+            appendsecretMessage("dont tell anyone");
+        } else {
+            const idx = inputs.indexOf(lower);
+            const reply = idx !== -1 ? outputs[idx] : "wdym";
+            appendMessage('you', text);
+            appendMessage('bot', reply);
+        }
+
         input.value = '';
         input.focus();
     }
