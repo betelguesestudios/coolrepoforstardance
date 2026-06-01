@@ -95,6 +95,62 @@
             document.body.appendChild(star);
             setTimeout(() => star.remove(), 400);
             });
+        } else if (lower === "august 12 2036 the heat death of the universe") {
+            const style = document.createElement('style');
+            style.textContent = `
+            body {
+                margin: 0;
+                overflow: hidden; 
+                background-color: white;
+                transition: background-color 2s ease-in-out;
+                height: 100vh;
+                position: relative;
+            }
+            .sucked-down {
+                transition: transform 1.5s cubic-bezier(0.55, 0.055, 0.675, 0.19), opacity 1.5s ease-in-out !important;
+                transform: translateY(120vh) scaleY(1.5) !important;
+                opacity: 0 !important;
+            }
+            .void-text {
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                color: #ff3333;
+                font-family: monospace;
+                font-size: 2rem;
+                letter-spacing: 2px;
+                opacity: 0;
+                transition: opacity 2.5s ease-in-out;
+                z-index: 9999;
+                text-align: center;
+                white-space: nowrap;
+            }
+            `;
+            document.head.appendChild(style);
+            function triggerTheVoid() {
+            const elements = document.querySelectorAll('body > *:not(script):not(style)');
+            elements.forEach((el, index) => {
+                setTimeout(() => {
+                el.classList.add('sucked-down');
+                }, index * 30); 
+            });
+            setTimeout(() => {
+                document.body.style.backgroundColor = 'black';
+            }, 1000);
+            setTimeout(() => {
+                const textNode = document.createElement('div');
+                textNode.className = 'void-text';
+                textNode.innerText = 'why have you done this';
+                document.body.appendChild(textNode);
+                
+                // Trigger the opacity fade-in
+                setTimeout(() => {
+                textNode.style.opacity = '1';
+                }, 100);
+            }, 3000);
+            }
+            triggerTheVoid();
         } else {
             const idx = inputs.indexOf(lower);
             const reply = idx !== -1 ? outputs[idx] : "wdym";
