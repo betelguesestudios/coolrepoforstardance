@@ -11,3 +11,22 @@ this is a website where you can talk to an "ai" which is actually just responses
 2: open it and look for index.html
 
 3: open the index in a browser of choice
+
+## features
+- pretty stupid!
+- annoying!
+- forgets all context instantly!
+- lore?
+
+## how it works
+i wrote a two big lists, one for input and one for output. for example, when someone says "hello", it will find the index of the message in the input list, then use that index to find the right item the second list to get the output ive written, which in this case would be "august 12 2036 the heat death of the universe"
+
+## people who helped
+
+me - making it
+
+my brother - sometimes testing it
+
+barnaby - barnaby 
+
+harry - nuisance 
